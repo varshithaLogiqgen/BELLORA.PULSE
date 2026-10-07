@@ -18,6 +18,7 @@ import { getCategoryName } from '@/lib/config/categories';
 import { siteConfig } from '@/lib/config/site';
 import { blogPromotion } from '@/lib/config/blogPromotion';
 import { NewsTicker } from '@/components/NewsTicker';
+import { ExploreSections } from '@/components/ExploreSections';
 import { updateFeedLocation } from '@/lib/utils/feedNavigation';
 import { publishSearchFeedback } from '@/lib/utils/searchPanel';
 import type {
@@ -211,6 +212,7 @@ export function HomeView() {
           </div>
         </div>
       </section>
+      {category === 'all' && !search && page === 1 && <ExploreSections />}
       <NewsTicker
         articles={status === 'ready' && category !== CREATORS_CATEGORY_SLUG ? articles : []}
         loading={status === 'loading' && category !== CREATORS_CATEGORY_SLUG}

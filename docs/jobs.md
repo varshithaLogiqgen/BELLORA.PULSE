@@ -1,4 +1,4 @@
-# Live aidisha.pulse Jobs
+# Live bellora.pulse Jobs
 
 Jobs now come from public employer APIs, not the former hand-maintained sample catalog.
 

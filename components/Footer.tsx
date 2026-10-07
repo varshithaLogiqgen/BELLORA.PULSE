@@ -15,12 +15,14 @@ const footerGroups = [
   {
     title: 'Explore',
     links: [
-      { label: 'AI tools', href: '/?category=ai-tools' },
+      { label: 'AI Tools A–Z', href: '/tools' },
+      { label: 'Interview preparation', href: '/interviews' },
+      { label: 'AI podcasts', href: '/podcasts' },
       { label: 'AI events', href: '/?category=ai-events' },
       { label: 'Robotics', href: '/?category=robotics' },
       { label: 'Creator directory', href: '/?category=ai-content-creators' },
       { label: 'AI jobs', href: '/jobs' },
-      { label: 'Saved stories', href: '/saved' },
+      { label: 'Saved items', href: '/saved' },
     ],
   },
 ];

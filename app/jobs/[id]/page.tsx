@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { JobSaveButton } from '@/components/jobs/JobSaveButton';
 import { jobLocation, jobSections, jobStatus } from '@/lib/jobs/catalog';
 import { getLiveJob } from '@/lib/jobs/live';
+import { preparationHref } from '@/lib/interviews/catalog';
 export const dynamic = 'force-dynamic';
 type Props = { params: Promise<{ id: string }>; searchParams: Promise<{ from?: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -33,6 +34,7 @@ export default async function JobPage({ params, searchParams }: Props) {
         <p className="mt-8 border-t border-border pt-5 text-xs leading-relaxed text-fg-muted">Retrieved from the employer’s {job.sourceName} feed. Read the <a href={job.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-accent underline">original employer posting</a> for the full description, requirements, and application terms. Last fetched {new Date(job.checkedAt).toUTCString()}.</p>
       </div>
       <aside aria-label="Job overview" className="jobs-filter-panel p-6">
+        <Link href={preparationHref(job.company)} className="directory-button mb-6">Prepare for this role →</Link>
         <h2 className="text-lg font-semibold text-fg">At a glance</h2><dl className="mt-5 space-y-5">{[
           ['Compensation', job.compensation ?? 'Not specified'], ['Experience', job.experience], ['Specialization', job.specialization],
           ['Duration', job.duration ?? 'Not specified'], ['Application deadline', job.closesAt ?? 'Not specified'],

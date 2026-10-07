@@ -10,7 +10,9 @@ import { OPEN_SEARCH_EVENT } from '@/lib/utils/searchPanel';
 
 const navigation = [
   { label: 'News', href: '/', category: 'news' },
-  { label: 'AI tools', href: '/?category=ai-tools', category: 'ai-tools' },
+  { label: 'AI Tools', href: '/tools', category: 'tools' },
+  { label: 'Interview Prep', href: '/interviews', category: 'interviews' },
+  { label: 'Podcasts', href: '/podcasts', category: 'podcasts' },
   { label: 'Creators', href: '/?category=ai-content-creators', category: 'ai-content-creators' },
   { label: 'Jobs', href: '/jobs', category: 'jobs' },
 ];
@@ -36,8 +38,8 @@ function MainNavigation() {
   const pathname = usePathname();
   const params = useSearchParams();
   const category = params.get('category');
-  const active = pathname.startsWith('/jobs') ? 'jobs' : pathname !== '/' ? undefined
-    : category === 'ai-tools' || category === 'ai-content-creators' ? category : 'news';
+  const section = navigation.find((item) => item.href !== '/' && !item.href.includes('?') && (pathname === item.href || pathname.startsWith(item.href + '/')));
+  const active = section?.category ?? (pathname === '/' ? category === 'ai-content-creators' ? category : 'news' : undefined);
   return <NavigationLinks active={active} />;
 }
 
@@ -53,8 +55,13 @@ function SearchTrigger() {
         window.dispatchEvent(new Event(OPEN_SEARCH_EVENT));
         const input = document.getElementById('site-search');
         input?.focus({ preventScroll: true });
-        if (input?.closest('#creator-directory, #jobs-board')) input.scrollIntoView({ block: 'center', behavior: 'instant' });
+        if (input?.closest('#creator-directory, #jobs-board, .directory-page')) input.scrollIntoView({ block: 'center', behavior: 'instant' });
         if (!input && pathname.startsWith('/jobs')) router.push('/jobs?focus=search');
+        if (!input) {
+          const section = ['/tools', '/interviews', '/podcasts'].find((route) => pathname === route || pathname.startsWith(route + '/'));
+          if (section) router.push(`${section}?focus=search`);
+          else if (pathname === '/saved') router.push('/?focus=search');
+        }
       }}
       className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-lg border border-border px-2.5 text-sm text-fg-muted transition-colors hover:border-accent hover:text-accent sm:px-3"
     >

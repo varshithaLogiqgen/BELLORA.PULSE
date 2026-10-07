@@ -4,17 +4,36 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useBookmarks } from '@/lib/hooks/useBookmarks';
 import { useSavedJobs } from '@/lib/hooks/useSavedJobs';
+import { useSavedResources } from '@/lib/hooks/useSavedResources';
 
 export function SavedLink() {
   const bookmarks = useBookmarks();
   const { savedIds } = useSavedJobs();
-  const inJobs = usePathname().startsWith('/jobs');
-  const count = inJobs ? savedIds.length : bookmarks.length;
+  const pathname = usePathname();
+  const inJobs = pathname.startsWith('/jobs');
+  const savedTools = useSavedResources('tools');
+  const savedQuestions = useSavedResources('questions');
+  const savedShows = useSavedResources('shows');
+  const savedEpisodes = useSavedResources('episodes');
+  const count = inJobs
+    ? savedIds.length
+    : bookmarks.length +
+      savedTools.savedIds.length +
+      savedQuestions.savedIds.length +
+      savedShows.savedIds.length +
+      savedEpisodes.savedIds.length;
+  const tab = pathname.startsWith('/tools')
+    ? 'tools'
+    : pathname.startsWith('/interviews')
+      ? 'questions'
+      : pathname.startsWith('/podcasts')
+        ? 'episodes'
+        : 'articles';
 
   return (
     <Link
-      href={inJobs ? '/jobs?saved=true' : '/saved'}
-      aria-label={`Saved ${inJobs ? 'jobs' : 'articles'} (${count} saved)`}
+      href={inJobs ? '/jobs?saved=true' : `/saved?tab=${tab}`}
+      aria-label={`Saved ${inJobs ? 'jobs' : 'items'} (${count} saved)`}
       className="relative inline-flex h-10 shrink-0 items-center gap-2 rounded-lg border border-border bg-surface px-2.5 text-sm font-medium text-fg-muted transition-colors hover:border-accent hover:text-accent sm:px-3"
     >
       <svg

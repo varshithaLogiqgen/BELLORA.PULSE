@@ -1,0 +1,147 @@
+[
+  {
+    "slug": "aider",
+    "file": "aider.png",
+    "source": "https://aider.chat/assets/icons/apple-touch-icon.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "beautiful-ai",
+    "file": "beautiful-ai.png",
+    "source": "https://cdn.prod.website-files.com/59deb588800ae30001ec19c9/691b4ae4a724e6c686bfb035_BAI%20symbol%3Dfull%20color%20black.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "bolt",
+    "file": "bolt.svg",
+    "source": "https://bolt.new/static/favicon.svg",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "canva",
+    "file": "canva.ico",
+    "source": "https://static.canva.com/static/images/favicon.ico",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "chatgpt",
+    "file": "chatgpt.svg",
+    "source": "https://cdn.oaistatic.com/assets/favicon-l4nq08hd.svg",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "claude",
+    "file": "claude.png",
+    "source": "https://claude.ai/apple-touch-icon.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "cursor",
+    "file": "cursor.svg",
+    "source": "https://cursor.com/marketing-static/favicon-light.svg",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "descript",
+    "file": "descript.svg",
+    "source": "https://static-cdn.descript.com/web/icons/favicon.svg",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "elevenlabs",
+    "file": "elevenlabs.svg",
+    "source": "https://elevenlabs.io/icon.svg?c23f5371fdd26632",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "elicit",
+    "file": "elicit.png",
+    "source": "https://framerusercontent.com/images/GWXKVhGBLC34aTLlmLIMsRVb4.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "fathom",
+    "file": "fathom.png",
+    "source": "https://cdn.prod.website-files.com/6899da9beccbdbe92be49b5d/6a4282cf5eaacfd4a9c45526_fathom_favicon.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "gamma",
+    "file": "gamma.svg",
+    "source": "https://static.gamma.app/favicons/favicon_light.svg",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "github-copilot",
+    "file": "github-copilot.svg",
+    "source": "https://github.com/features/copilot",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "grammarly",
+    "file": "grammarly.ico",
+    "source": "https://static-web.grammarly.com/cms/master/public/favicon.ico",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "jasper",
+    "file": "jasper.png",
+    "source": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/681e121f9445a06741087852_Webclip.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "lovable",
+    "file": "lovable.png",
+    "source": "https://lovable.dev/apple-touch-icon.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "midjourney",
+    "file": "midjourney.png",
+    "source": "https://www.google.com/s2/favicons?domain=midjourney.com&sz=128",
+    "checkedAt": "2026-09-28",
+    "note": "Site favicon retrieved through Google favicon cache; official host blocks automated downloads."
+  },
+  {
+    "slug": "notion-ai",
+    "file": "notion-ai.png",
+    "source": "https://www.notion.com/front-static/logo-ios.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "ollama",
+    "file": "ollama.png",
+    "source": "https://ollama.com/public/apple-touch-icon.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "otter",
+    "file": "otter.png",
+    "source": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/618e943a80919a98b5e9bf69_apple-icon.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "perplexity",
+    "file": "perplexity.png",
+    "source": "https://www.perplexity.ai/apple-touch-icon.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "runway",
+    "file": "runway.png",
+    "source": "https://runway.com/icon.png?icon.35ps9bmugbe1e.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "synthesia",
+    "file": "synthesia.png",
+    "source": "https://cdn.prod.website-files.com/65e89895c5a4b8d764c0d710/6618fd69d436784c0bba5e9e_webclip.png",
+    "checkedAt": "2026-09-28"
+  },
+  {
+    "slug": "v0",
+    "file": "v0.png",
+    "source": "https://v0.app/assets/apple-icon.png",
+    "checkedAt": "2026-09-28"
+  }
+]

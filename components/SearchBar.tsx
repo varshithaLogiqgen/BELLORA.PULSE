@@ -25,7 +25,7 @@ export function SearchBar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const urlValue = searchParams.get('search') ?? '';
-  const allowed = !pathname.startsWith('/jobs') && !(pathname === '/' && searchParams.get('category') === 'ai-content-creators');
+  const allowed = pathname === '/' && searchParams.get('category') !== 'ai-content-creators';
   const [value, setValue] = useState(urlValue);
   const [preferences, setPreferences] = useState<PanelPreferences>(defaultPanelPreferences);
   const [ready, setReady] = useState(false);

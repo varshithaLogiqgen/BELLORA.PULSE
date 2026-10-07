@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Allow a verification build alongside a running development server.
+  distDir: process.env.AI_PULSE_BUILD_DIR || '.next',
   reactStrictMode: true,
   images: {
     // Publisher images are hot-linked from arbitrary hosts, so the Next image
