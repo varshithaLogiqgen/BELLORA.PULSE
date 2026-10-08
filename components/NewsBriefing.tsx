@@ -6,7 +6,7 @@ export function NewsBriefing({ articles }: { articles: Article[] }) {
   return (
     <aside aria-labelledby="briefing-heading" className="min-w-0">
       <h2 id="briefing-heading" className="section-eyebrow mb-4">The quick read</h2>
-      <div className="briefing-panel rounded-xl border border-border bg-surface p-5 sm:p-6">
+      <div className="briefing-panel rounded-2xl border border-border text-fg p-5 sm:p-6">
         <div className="mb-1 flex items-center justify-between gap-2">
           <p className="font-display text-lg font-bold tracking-tight">On your radar</p>
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5 text-accent">

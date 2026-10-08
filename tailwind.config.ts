@@ -18,6 +18,7 @@ const config: Config = {
         border: 'rgb(var(--color-border) / <alpha-value>)',
         fg: 'rgb(var(--color-fg) / <alpha-value>)',
         'fg-muted': 'rgb(var(--color-fg-muted) / <alpha-value>)',
+        secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
         accent: 'rgb(var(--color-accent) / <alpha-value>)',
         'accent-fg': 'rgb(var(--color-accent-fg) / <alpha-value>)',
         'accent-soft': 'rgb(var(--color-accent-soft) / <alpha-value>)',

@@ -11,7 +11,7 @@ interface ArticleImageProps {
   seed: string;
 }
 
-/** Deterministic hue so a given article always gets the same fallback tint. */
+/** Deterministic variation within the site's blue, navy, and purple palette. */
 function hueFromSeed(seed: string): number {
   let hash = 0;
   for (let index = 0; index < seed.length; index += 1) {
@@ -32,7 +32,8 @@ export function ArticleImage({ src, alt, className, seed }: ArticleImageProps) {
   }, [src]);
 
   if (failed || !src) {
-    const hue = hueFromSeed(seed);
+    const highlights = ['var(--color-ocean)', 'var(--color-teal)', '75 57 118'];
+    const highlight = highlights[hueFromSeed(seed) % highlights.length];
     return (
       <div
         role="img"
@@ -42,7 +43,7 @@ export function ArticleImage({ src, alt, className, seed }: ArticleImageProps) {
           className,
         )}
         style={{
-          backgroundImage: `radial-gradient(ellipse at 70% 20%, hsl(${hue} 45% 38%), transparent 70%), linear-gradient(135deg, hsl(${hue} 35% 12%), hsl(${(hue + 45) % 360} 40% 25%))`,
+          backgroundImage: `radial-gradient(ellipse at 70% 20%, rgb(${highlight}), transparent 70%), var(--ocean-gradient)`,
         }}
       >
         <svg

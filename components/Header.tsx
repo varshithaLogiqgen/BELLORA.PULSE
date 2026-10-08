@@ -95,7 +95,7 @@ export function Header() {
   return (
     <header
       ref={headerRef}
-      className="site-chrome site-header sticky top-0 z-40 border-b border-border bg-surface text-fg"
+      className="site-header sticky top-0 z-40 border-b border-border bg-surface text-fg"
     >
       <div className="header-layout px-4 sm:px-6">
         <Link

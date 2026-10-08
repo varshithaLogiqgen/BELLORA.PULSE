@@ -27,7 +27,7 @@ const footerGroups = [
 
 export function Footer() {
   return (
-    <footer className="site-chrome overflow-hidden border-t border-border bg-surface pb-[var(--search-dock-space)] text-fg">
+    <footer className="site-chrome overflow-hidden border-t border-border pb-[var(--search-dock-space)] text-fg">
       <div className="mx-auto max-w-content px-4 pt-12 sm:px-6 sm:pt-16 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
           <section aria-labelledby="footer-heading" className="max-w-xl">
@@ -65,7 +65,7 @@ export function Footer() {
                 <ul className="mt-5 space-y-1">
                   {group.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="inline-block py-2 text-sm text-fg-muted underline-offset-4 transition-colors hover:text-accent hover:underline sm:text-base">
+                      <Link href={link.href} className="inline-block py-2 text-sm text-secondary underline-offset-4 transition-colors hover:text-accent hover:underline sm:text-base">
                         {link.label}
                       </Link>
                     </li>

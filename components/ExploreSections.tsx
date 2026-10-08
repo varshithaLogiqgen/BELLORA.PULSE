@@ -35,7 +35,7 @@ export function ExploreSections() {
           <Link
             href={section.href}
             key={section.href}
-            className="directory-card group"
+            className="directory-card explore-card group"
           >
             <div className="flex items-center justify-between">
               <span className="section-eyebrow">{section.eyebrow}</span>

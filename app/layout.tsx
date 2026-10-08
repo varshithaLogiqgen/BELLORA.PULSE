@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Suspense } from 'react';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/config/site';
 import { Header } from '@/components/Header';
@@ -8,16 +8,11 @@ import { Footer } from '@/components/Footer';
 import { ThemeScript } from '@/components/ThemeScript';
 import { SearchBar } from '@/components/SearchBar';
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
   display: 'swap',
-  variable: '--font-inter',
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
+  variable: '--font-poppins',
 });
 
 export const metadata: Metadata = {
@@ -30,8 +25,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f6f8fc' },
-    { media: '(prefers-color-scheme: dark)', color: '#0b1220' },
+    { media: '(prefers-color-scheme: light)', color: '#eeeeee' },
+    { media: '(prefers-color-scheme: dark)', color: '#160e35' },
   ],
 };
 
@@ -39,7 +34,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html lang="en" className={poppins.variable} suppressHydrationWarning>
       <head>
         <ThemeScript />
       </head>

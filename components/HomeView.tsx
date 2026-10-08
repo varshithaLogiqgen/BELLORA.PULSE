@@ -183,7 +183,7 @@ export function HomeView() {
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent ring-4 ring-accent/10" />
             Your window into what&apos;s next
           </p>
-          <h1 id="page-heading" className="text-[32px] font-bold leading-[1.1] tracking-[-0.045em] text-fg sm:text-[42px] xl:text-5xl">
+          <h1 id="page-heading" className="text-[32px] font-bold leading-[1.1] tracking-[-0.045em] text-fg sm:text-5xl xl:text-6xl">
             The world of AI. <span className="text-accent">In focus.</span>
           </h1>
           <p className="mt-4 max-w-xl text-sm leading-relaxed text-fg-muted sm:text-[15px]">

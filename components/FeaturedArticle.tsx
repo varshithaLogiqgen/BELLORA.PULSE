@@ -19,8 +19,8 @@ export function FeaturedArticle({ article }: { article: Article }) {
       <article
         id={`article-${article.id}`}
         tabIndex={-1}
-        className="group grid overflow-hidden rounded-xl border border-border bg-surface md:grid-cols-[0.95fr_1.05fr]">
-        <div className="relative aspect-[16/10] w-full overflow-hidden md:aspect-auto md:h-full md:min-h-[360px]">
+        className="featured-story group relative isolate grid overflow-hidden rounded-2xl border border-border">
+        <div className="absolute inset-0 -z-20 overflow-hidden">
           <ArticleImage
             src={article.imageUrl}
             alt={article.title}
@@ -29,9 +29,9 @@ export function FeaturedArticle({ article }: { article: Article }) {
           />
         </div>
 
-        <div className="flex flex-col gap-4 p-6 sm:p-7">
+        <div className="relative flex min-h-[440px] flex-col justify-end gap-4 p-6 sm:min-h-[520px] sm:p-10">
           <div className="flex flex-wrap items-center gap-3">
-            <CategoryBadge slug={article.category} />
+            <span className="featured-category"><CategoryBadge slug={article.category} /></span>
             <span className="text-xs text-fg-muted">
               <span className="font-bold text-fg">{article.sourceName}</span>
               <span aria-hidden="true"> · </span>
@@ -54,12 +54,12 @@ export function FeaturedArticle({ article }: { article: Article }) {
             </p>
           )}
 
-          <div className="mt-auto flex items-center gap-3 pt-2">
+          <div className="flex items-center gap-3 pt-2">
             <a
               href={article.articleUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-fg transition-colors hover:bg-accent/85"
+              className="inline-flex h-11 items-center gap-2 rounded-lg bg-[#BE1763] px-4 text-sm font-semibold text-white transition-colors hover:bg-accent/85"
             >
               Read full story
               <span className="sr-only"> at {article.sourceName}</span>
