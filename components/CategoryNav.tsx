@@ -1,5 +1,4 @@
 'use client';
-import NextLink from 'next/link';
 import { FeedLink as Link } from '@/components/FeedLink';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { categories } from '@/lib/config/categories';
@@ -49,14 +48,6 @@ export function CategoryNav({ active }: { active: string }) {
             </li>
           );
         })}
-        <li className="shrink-0">
-          <NextLink
-            href="/jobs"
-            className="inline-flex h-10 items-center rounded-lg px-3.5 text-xs font-semibold uppercase text-fg-muted transition-colors hover:bg-accent-soft hover:text-accent"
-          >
-            AI Jobs
-          </NextLink>
-        </li>
       </ul>
     </nav>
   );

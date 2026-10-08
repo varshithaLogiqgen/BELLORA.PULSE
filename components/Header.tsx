@@ -11,10 +11,8 @@ import { OPEN_SEARCH_EVENT } from '@/lib/utils/searchPanel';
 const navigation = [
   { label: 'News', href: '/', category: 'news' },
   { label: 'AI Tools', href: '/tools', category: 'tools' },
-  { label: 'Interview Prep', href: '/interviews', category: 'interviews' },
   { label: 'Podcasts', href: '/podcasts', category: 'podcasts' },
   { label: 'Creators', href: '/?category=ai-content-creators', category: 'ai-content-creators' },
-  { label: 'Jobs', href: '/jobs', category: 'jobs' },
 ];
 
 function NavigationLinks({ active }: { active?: string }) {
@@ -55,10 +53,9 @@ function SearchTrigger() {
         window.dispatchEvent(new Event(OPEN_SEARCH_EVENT));
         const input = document.getElementById('site-search');
         input?.focus({ preventScroll: true });
-        if (input?.closest('#creator-directory, #jobs-board, .directory-page')) input.scrollIntoView({ block: 'center', behavior: 'instant' });
-        if (!input && pathname.startsWith('/jobs')) router.push('/jobs?focus=search');
+        if (input?.closest('#creator-directory, .directory-page')) input.scrollIntoView({ block: 'center', behavior: 'instant' });
         if (!input) {
-          const section = ['/tools', '/interviews', '/podcasts'].find((route) => pathname === route || pathname.startsWith(route + '/'));
+          const section = ['/tools', '/podcasts'].find((route) => pathname === route || pathname.startsWith(route + '/'));
           if (section) router.push(`${section}?focus=search`);
           else if (pathname === '/saved') router.push('/?focus=search');
         }

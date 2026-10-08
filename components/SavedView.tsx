@@ -8,10 +8,8 @@ import { clearBookmarks, removeBookmark } from '@/lib/bookmarks';
 import { useBookmarks } from '@/lib/hooks/useBookmarks';
 import { useSavedResources } from '@/lib/hooks/useSavedResources';
 import { tools } from '@/lib/tools/catalog';
-import { questions } from '@/lib/interviews/catalog';
 import { shows, episodes } from '@/lib/podcasts/catalog';
 import { ToolCard } from '@/components/tools/ToolCard';
-import { QuestionCard } from '@/components/interviews/QuestionCard';
 import { PodcastCard, EpisodeCard } from '@/components/podcasts/PodcastCard';
 import {
   DirectoryHero,
@@ -21,7 +19,6 @@ import {
 export function SavedView() {
   const bookmarks = useBookmarks();
   const savedTools = useSavedResources('tools');
-  const savedQuestions = useSavedResources('questions');
   const savedShows = useSavedResources('shows');
   const savedEpisodes = useSavedResources('episodes');
   const params = useSearchParams();
@@ -29,9 +26,6 @@ export function SavedView() {
   useEffect(() => setMounted(true), []);
   const toolItems = tools.filter((item) =>
     savedTools.savedIds.includes(item.slug),
-  );
-  const questionItems = questions.filter((item) =>
-    savedQuestions.savedIds.includes(item.id),
   );
   const showItems = shows.filter((item) =>
     savedShows.savedIds.includes(item.slug),
@@ -42,12 +36,6 @@ export function SavedView() {
   const tabs = [
     { id: 'articles', label: 'Articles', count: bookmarks.length, href: '/' },
     { id: 'tools', label: 'Tools', count: toolItems.length, href: '/tools' },
-    {
-      id: 'questions',
-      label: 'Questions',
-      count: questionItems.length,
-      href: '/interviews',
-    },
     { id: 'shows', label: 'Shows', count: showItems.length, href: '/podcasts' },
     {
       id: 'episodes',
@@ -62,7 +50,7 @@ export function SavedView() {
       <DirectoryHero
         eyebrow="Keep something good"
         title="Your saved collection"
-        description="Tools to try, questions to practise, and conversations for later. Saved items stay in this browser and are not synced to an account."
+        description="Stories to revisit, tools to try, and conversations for later. Saved items stay in this browser and are not synced to an account."
       />
       <nav aria-label="Saved collections" className="my-6 flex flex-wrap gap-3">
         {tabs.map((tab) => (
@@ -77,9 +65,6 @@ export function SavedView() {
             <span className="directory-tag">{mounted ? tab.count : '–'}</span>
           </Link>
         ))}
-        <Link href="/jobs?saved=true" className="directory-button">
-          Saved jobs ↗
-        </Link>
       </nav>
       {!mounted ? (
         <SkeletonGrid count={3} />
@@ -116,13 +101,6 @@ export function SavedView() {
             <div className="directory-grid">
               {toolItems.map((tool) => (
                 <ToolCard key={tool.slug} tool={tool} />
-              ))}
-            </div>
-          )}
-          {selected.id === 'questions' && (
-            <div className="space-y-5">
-              {questionItems.map((question) => (
-                <QuestionCard key={question.id} question={question} />
               ))}
             </div>
           )}

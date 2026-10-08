@@ -16,32 +16,12 @@ const footerGroups = [
     title: 'Explore',
     links: [
       { label: 'AI Tools A–Z', href: '/tools' },
-      { label: 'Interview preparation', href: '/interviews' },
       { label: 'AI podcasts', href: '/podcasts' },
       { label: 'AI events', href: '/?category=ai-events' },
       { label: 'Robotics', href: '/?category=robotics' },
       { label: 'Creator directory', href: '/?category=ai-content-creators' },
-      { label: 'AI jobs', href: '/jobs' },
       { label: 'Saved items', href: '/saved' },
     ],
-  },
-];
-
-const socialLinks = [
-  {
-    name: 'LinkedIn',
-    href: siteConfig.socialLinks.linkedin,
-    path: 'M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.52 2.79-1.52 2.98 0 3.58 1.96 3.58 4.51v5.26Z',
-  },
-  {
-    name: 'GitHub',
-    href: siteConfig.socialLinks.github,
-    path: 'M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.56 9.56 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z',
-  },
-  {
-    name: 'X',
-    href: siteConfig.socialLinks.x,
-    path: 'M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.43L5.55 22H2.4l7.98-9.12L.8 2h6.41l4.43 6.75L18.9 2ZM17.8 20h1.73L6.27 3.88H4.41L17.8 20Z',
   },
 ];
 
@@ -105,49 +85,16 @@ export function Footer() {
           {siteConfig.name}
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-5 border-t border-border py-7 sm:flex-row sm:py-8">
-          <p className="text-sm text-fg-muted">
-            {siteConfig.name} &copy; Copyright {new Date().getFullYear()}.
+        <div className="border-t border-border py-7 sm:py-8">
+          <p className="text-center text-xs leading-7 text-fg-muted sm:text-sm">
+            <span className="inline-block">&copy; {new Date().getFullYear()} {siteConfig.name}</span>
+            <span aria-hidden="true" className="mx-2">&middot;</span>{' '}
+            <span className="inline-block">Developed by <strong className="font-semibold text-fg">Indrasena Seetana</strong></span>
+            <span aria-hidden="true" className="mx-2">&middot;</span>{' '}
+            <span className="inline-block">AI Sr ERP Applications Engineer</span>
+            <span aria-hidden="true" className="mx-2">&middot;</span>{' '}
+            <span className="inline-block">Bell Integrations</span>
           </p>
-          <div role="group" aria-label={`${siteConfig.name} around the web`} className="flex items-center gap-3">
-            {socialLinks.map((social) => {
-              const icon = (
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                  <path d={social.path} />
-                </svg>
-              );
-
-              return social.href ? (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${siteConfig.name} on ${social.name}`}
-                  className="footer-social-link"
-                >
-                  {icon}
-                </a>
-              ) : (
-                <span
-                  key={social.name}
-                  role="img"
-                  aria-label={`${social.name} — link coming soon`}
-                  title={`${social.name} — link coming soon`}
-                  className="footer-social-link text-fg-muted"
-                >
-                  {icon}
-                </span>
-              );
-            })}
-            <Link href="/" aria-label={`${siteConfig.name} homepage`} className="footer-social-link">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
-                <circle cx="12" cy="12" r="9" />
-                <ellipse cx="12" cy="12" rx="4" ry="9" />
-                <path d="M3 12h18" />
-              </svg>
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

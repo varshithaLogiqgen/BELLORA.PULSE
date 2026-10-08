@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { tools } from '@/lib/tools/catalog';
-import { companies, questions } from '@/lib/interviews/catalog';
 import { shows } from '@/lib/podcasts/catalog';
 
 export function ExploreSections() {
@@ -12,15 +11,6 @@ export function ExploreSections() {
       description: 'Find a tool for your task, from coding to creative work.',
       detail: `${tools.length} tools · Browse A–Z`,
       mark: '↗',
-    },
-    {
-      href: '/interviews',
-      eyebrow: 'Prepare',
-      title: 'Make your next move',
-      description:
-        'Build confidence with company tracks and practical AI questions.',
-      detail: `${companies.length} tracks · ${questions.length} questions`,
-      mark: '◎',
     },
     {
       href: '/podcasts',
@@ -40,7 +30,7 @@ export function ExploreSections() {
         </h2>
         <span className="directory-badge">Explore</span>
       </div>
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2">
         {sections.map((section) => (
           <Link
             href={section.href}
