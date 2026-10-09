@@ -1,5 +1,6 @@
 import { FeedLink as Link } from '@/components/FeedLink';
 import { siteConfig } from '@/lib/config/site';
+import { BrandLogo } from '@/components/BrandLogo';
 
 const footerGroups = [
   {
@@ -32,10 +33,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
           <section aria-labelledby="footer-heading" className="max-w-xl">
             <Link href="/" className="inline-flex items-center gap-2 font-display text-sm font-bold tracking-tight text-fg">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent">
-                <path d="M2 12h5l3-8 4 16 3-8h5" />
-              </svg>
-              {siteConfig.name}
+              <BrandLogo footer />
             </Link>
             <h2 id="footer-heading" className="mt-6 text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl">
               Stay ahead of<br />

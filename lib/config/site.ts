@@ -3,6 +3,7 @@
  */
 export const siteConfig = {
   name: 'BELLORA.PULSE',
+  brandTagline: 'AI intelligence, daily.',
   tagline: 'AI and startup news, collected automatically.',
   description:
     'bellora.pulse collects artificial intelligence and startup headlines from across the web and links you straight to the original publisher.',

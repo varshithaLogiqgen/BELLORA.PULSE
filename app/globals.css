@@ -219,10 +219,22 @@
     padding-bottom: 12px;
   }
 
-  .header-brand-icon {
-    background-image: var(--brand-gradient);
-    color: #fff;
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.3), 0 4px 16px rgb(190 23 99 / 0.15);
+  .brand-logo { display: inline-flex; align-items: center; gap: 9px; color: #CF559C; }
+  .brand-logo-mark { width: 37px; height: 42px; flex-shrink: 0; }
+  .brand-logo-copy { display: flex; flex-direction: column; gap: 5px; }
+  .brand-logo-name { font-family: var(--font-display); font-size: 17px; font-weight: 800; line-height: 1.1; letter-spacing: -0.045em; white-space: nowrap; }
+  .brand-logo-tagline { color: rgb(var(--color-fg-muted)); font-family: var(--font-sans); font-size: 8px; font-weight: 500; line-height: 1.5; letter-spacing: 0.09em; white-space: nowrap; }
+  @media (min-width: 640px) {
+    .brand-logo { gap: 12px; }
+    .brand-logo-mark { width: 47px; height: 52px; }
+    .brand-logo-name { font-size: 24px; }
+    .brand-logo-tagline { font-size: 10px; letter-spacing: 0.14em; }
+  }
+  @media (max-width: 379px) {
+    .site-header .brand-logo { gap: 5px; }
+    .site-header .brand-logo-mark { width: 25px; height: 34px; }
+    .site-header .brand-logo-name { font-size: 13px; }
+    .site-header .brand-logo-tagline { font-size: 7px; letter-spacing: 0.025em; }
   }
 
   .header-navigation {
@@ -252,8 +264,23 @@
   }
 
   .news-intro {
-    @apply relative grid gap-7 overflow-hidden rounded-2xl border border-border bg-surface p-6 sm:p-8;
-    background-color: rgb(var(--color-surface-muted));
+    @apply relative grid gap-7 overflow-hidden rounded-2xl border p-6 sm:p-8;
+    background-color: #E8E9F5;
+    border-color: #3B4C86;
+  }
+
+  .news-intro h1 {
+    color: #17265C;
+  }
+
+  .news-intro h1 .text-accent {
+    color: #D82B7A !important;
+  }
+
+  .news-intro p,
+  .news-intro .section-eyebrow,
+  .news-intro time {
+    color: #59627D;
   }
 
   .news-intro::before {
@@ -350,7 +377,7 @@
   }
 
   /* High-contrast feature surfaces share readable foreground tokens. */
-  .news-intro, .featured-story, .briefing-panel, .site-chrome, .explore-card {
+  .featured-story, .briefing-panel, .site-chrome, .explore-card {
     --color-fg: 255 255 255;
     --color-fg-muted: 222 228 244;
     --color-border: 104 119 162;
@@ -370,10 +397,7 @@
 
   .news-intro {
     min-height: 300px;
-    background: #144D80;
-    border-color: #144D80;
     padding-block: 48px;
-    box-shadow: 0 16px 40px rgb(22 35 82 / 0.16);
   }
 
   .news-intro::before {

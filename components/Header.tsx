@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useRef } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FeedLink as Link } from '@/components/FeedLink';
-import { siteConfig } from '@/lib/config/site';
+import { BrandLogo } from '@/components/BrandLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { SavedLink } from '@/components/SavedLink';
 import { OPEN_SEARCH_EVENT } from '@/lib/utils/searchPanel';
@@ -102,18 +102,7 @@ export function Header() {
           href="/"
           className="flex w-fit shrink-0 items-center gap-2 whitespace-nowrap font-display text-xl font-bold tracking-tight text-fg sm:gap-3 sm:text-2xl"
         >
-          <span
-            aria-hidden="true"
-            className="header-brand-icon flex h-8 w-8 items-center justify-center rounded-xl bg-accent text-accent-fg sm:h-11 sm:w-11"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6">
-              <path d="M2 12h5l3-8 4 16 3-8h5" />
-            </svg>
-          </span>
-          <span>
-            {siteConfig.name}
-            <span className="mt-0.5 hidden font-sans text-[9px] font-medium uppercase tracking-[0.2em] text-fg-muted sm:block">Intelligence, daily.</span>
-          </span>
+          <BrandLogo />
         </Link>
         <Suspense fallback={<NavigationLinks />}>
           <MainNavigation />
